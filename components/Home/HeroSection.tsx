@@ -14,8 +14,8 @@ interface MousePosition {
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState<MousePosition>({
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2,
+    x: 0,
+    y: 0,
   });
 
   const size = 500;
@@ -23,6 +23,8 @@ const HeroSection = () => {
   const { x, y } = mousePosition;
 
   useEffect(() => {
+    setMousePosition({ x: window.innerWidth / 2, y: window.innerHeight / 2});
+
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
     };
