@@ -5,7 +5,7 @@ import NavBar from "@/components/NavBar";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavBarMobile from "@/components/NavBarMobile";
-import NavScrollProgress from "@/components/NavScrollProgress";
+
 
 const josefin_sans = Josefin_Sans({ subsets: ["latin"] });
 
@@ -23,9 +23,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={josefin_sans.className}>
         <NavBar />
-        <NavScrollProgress />
         <NavBarMobile />
-        <div className="mt-[50px] w-full">{children}</div>
+        <div className="w-full">{children}</div>
         <Analytics />
         <SpeedInsights />
       </body>
