@@ -23,7 +23,7 @@ const HeroSection = () => {
   const { x, y } = mousePosition;
 
   useEffect(() => {
-    setMousePosition({ x: window.innerWidth / 2, y: window.innerHeight / 2});
+    setMousePosition({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
     const handleMouseMove = (event: MouseEvent) => {
       setMousePosition({ x: event.clientX, y: event.clientY });
@@ -77,7 +77,7 @@ const HeroSection = () => {
           WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
           WebkitMaskSize: `${size}px`,
         }}
-        transition={{ type: "tween", ease: "backOut" }}
+        transition={{ type: "tween", ease: "backOut", duration: 0.15 }}
       >
         <div className="absolute flex flex-col justify-center items-center rounded-full">
           <MatrixRainingCode className="z-[1]" />
