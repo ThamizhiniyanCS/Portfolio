@@ -4,7 +4,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
 import MatrixRainingCode from "@/components/Home/MatrixRain";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 interface MousePosition {
@@ -78,7 +77,7 @@ const HeroSection = () => {
           WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
           WebkitMaskSize: `${size}px`,
         }}
-        transition={{ type: "tween", ease: "backOut", duration: 0 }}
+        transition={{ ease: "backOut", duration: 0, delay: 0 }}
       >
         <div className="absolute flex flex-col justify-center items-center rounded-full">
           <MatrixRainingCode className="z-[1]" />

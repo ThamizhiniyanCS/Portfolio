@@ -5,7 +5,7 @@ import NavBar from "@/components/NavBar";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavBarMobile from "@/components/NavBarMobile";
-
+import Footer from "@/components/Footer/Footer";
 
 const josefin_sans = Josefin_Sans({ subsets: ["latin"] });
 
@@ -27,6 +27,7 @@ export default function RootLayout({
         <div className="w-full">{children}</div>
         <Analytics />
         <SpeedInsights />
+        <Footer />
       </body>
     </html>
   );
