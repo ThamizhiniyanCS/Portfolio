@@ -12,6 +12,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import NavScrollProgress from "@/components/NavScrollProgress";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -34,39 +35,35 @@ const components: { title: string; href: string; description: string }[] = [
 type Props = {};
 
 export default function NavBar({}: Props) {
+  const links: { name: string; href: string }[] = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Writeups", href: "#writeups" },
+    { name: "Cheatsheets", href: "#cheatsheets" },
+  ];
+
   return (
-    <div className="hidden xl:flex z-[45] bg-background fixed top-0 left-0 w-full h-[50px] justify-between items-center px-10">
-      <Link href="/">
-        <h1 className="">Thamizhiniyan C S</h1>
-      </Link>
+    <>
+      <div className="hidden xl:flex z-[45] bg-background fixed top-0 left-0 w-full h-[50px] justify-between items-center px-10">
+        <Link href="/">
+          <p className="">Thamizhiniyan C S</p>
+        </Link>
 
-      <NavigationMenu className="">
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Home
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <Link href="#about" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                About
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <Link href="#Documentation" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Documentation
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </div>
+        <NavigationMenu className="">
+          <NavigationMenuList>
+            {links.map(({ name, href }) => (
+              <NavigationMenuItem key={Math.random()}>
+                <Link href={href} legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {name}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+      <NavScrollProgress />
+    </>
   );
 }

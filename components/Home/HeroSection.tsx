@@ -37,11 +37,12 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <motion.div
+    <motion.section
+      id="home"
       initial={{ y: 30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ ease: "easeOut", duration: 0.5 }}
-      className="relative w-full flex justify-center items-center h-[calc(100vh-50px)] max-h-[1080px]"
+      className="relative w-full flex justify-center items-center h-[var(--section-height)] max-h-[1080px]"
     >
       <div className="absolute flex flex-col justify-center items-center rounded-full">
         <h4 className="scroll-m-20 text-md md:text-xl font-semibold tracking-widest">
@@ -77,7 +78,7 @@ const HeroSection = () => {
           WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
           WebkitMaskSize: `${size}px`,
         }}
-        transition={{ type: "tween", ease: "backOut", duration: 0.15 }}
+        transition={{ type: "tween", ease: "backOut", duration: 0 }}
       >
         <div className="absolute flex flex-col justify-center items-center rounded-full">
           <MatrixRainingCode className="z-[1]" />
@@ -108,7 +109,7 @@ const HeroSection = () => {
           </div>
         </div>
       </motion.div>
-    </motion.div>
+    </motion.section>
   );
 };
 
