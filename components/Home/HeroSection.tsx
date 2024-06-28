@@ -21,11 +21,6 @@ const HeroSection = () => {
   const { x, y } = mousePosition;
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    const show = () => {
-      timeout = setTimeout(async () => {}, 1000);
-    };
-
     setMousePosition({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
     const handleMouseMove = (event: MouseEvent) => {

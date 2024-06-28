@@ -25,7 +25,7 @@ const About = () => {
       >
         Hello, everyone. I&apos;m{" "}
         <span className="text-primary">Thamizhiniyan C S</span>, an Ethical
-        hacker, Next.js Developer, and Cyber Security enthusiast currently in my
+        Hacker, Next.js Developer, and Cyber Security enthusiast currently in my
         third year of engineering studies. My expertise is centered around cyber
         security, digital forensics, and crafting engaging web applications with
         Next.js.

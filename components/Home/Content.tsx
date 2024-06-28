@@ -50,7 +50,7 @@ const Content = ({
           animate={{ x: [null, -10, 0], opacity: 1 }}
           transition={{ ease: "easeOut", duration: 0.5, delay: 1.6 }}
         >
-          Penetration Tester
+          Ethical Hacker
         </motion.h3>
 
         <motion.span

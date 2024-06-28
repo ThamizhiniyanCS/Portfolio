@@ -11,7 +11,7 @@ const josefin_sans = Josefin_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Thamizhiniyan C S",
-  description: "Penetration Tester | NextJS Developer",
+  description: "Ethical Hacker | NextJS Developer",
 };
 
 export default function RootLayout({
