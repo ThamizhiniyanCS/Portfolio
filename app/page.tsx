@@ -8,6 +8,9 @@ export default function Home() {
       <HeroSection />
       <About />
       <Writeups />
+      <section id="cheatsheets">
+        <h1>Cheatsheets</h1>
+      </section>
     </main>
   );
 }

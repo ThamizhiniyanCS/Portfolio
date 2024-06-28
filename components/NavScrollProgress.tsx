@@ -10,7 +10,7 @@ const NavScrollProgress = (props: Props) => {
 
   return (
     <motion.div
-      className="progress-bar fixed top-[50px] z-[40] left-0 right-0 h-[1px] bg-primary"
+      className="progress-bar h-[1px] bg-primary"
       style={{ transformOrigin: "0%", scaleX: scrollYProgress }}
     />
   );

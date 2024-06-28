@@ -53,7 +53,8 @@
 
 @layer base {
   :root {
-    --section-height: 100vh;
+    --navbar-height: 50px;
+    --section-height: calc(100vh - var(--navbar-height));
     --section-padding-top: 50px;
   }
 
@@ -90,12 +91,33 @@
   outline: 1px solid slategrey;
 }
 
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--navbar-height);
+  z-index: 45;
+}
+
+section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100vw;
+  height: var(--section-height);
+  scroll-margin-top: var(--navbar-height);
+  scroll-behavior: smooth;
+}
+
 .mouse-mask {
   position: absolute;
   mask-image: url("https://raw.githubusercontent.com/Thamizhiniyan18/Portfolio/main/public/mouse-mask.svg");
   mask-repeat: no-repeat;
   mask-size: 500px;
-  height: 100vh;
+  height: var(--section-height);
   width: 100vw;
   display: flex;
   align-items: center;

@@ -2,9 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Separator } from "@/components/ui/separator";
-import MatrixRainingCode from "@/components/Home/MatrixRain";
 import { useState, useEffect } from "react";
+import Content from "./Content";
 
 interface MousePosition {
   x: number;
@@ -22,6 +21,11 @@ const HeroSection = () => {
   const { x, y } = mousePosition;
 
   useEffect(() => {
+    let timeout: NodeJS.Timeout;
+    const show = () => {
+      timeout = setTimeout(async () => {}, 1000);
+    };
+
     setMousePosition({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
     const handleMouseMove = (event: MouseEvent) => {
@@ -36,40 +40,8 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <motion.section
-      id="home"
-      initial={{ y: 30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeOut", duration: 0.5 }}
-      className="relative w-full flex justify-center items-center h-[var(--section-height)] max-h-[1080px]"
-    >
-      <div className="absolute flex flex-col justify-center items-center rounded-full">
-        <h4 className="scroll-m-20 text-md md:text-xl font-semibold tracking-widest">
-          Hey Folks!!, I am
-        </h4>
-        <h1 className="scroll-m-20 text-2xl md:text-6xl font-extrabold tracking-widest xl:text-8xl my-8">
-          Thamizhiniyan C S
-        </h1>
-        <div className="flex items-center h-[50px]">
-          <motion.h3
-            initial={{ x: 20, opacity: 0 }}
-            animate={{ x: [null, -10, 0], opacity: 1 }}
-            transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
-            className="scroll-m-20 text-md text-right md:text-2xl font-semibold tracking-widest"
-          >
-            Penetration Tester
-          </motion.h3>
-          <Separator className="bg-primary mx-5" orientation="vertical" />
-          <motion.h3
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: [null, 10, 0], opacity: 1 }}
-            transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
-            className="scroll-m-20 text-md text-left md:text-2xl font-semibold tracking-widest"
-          >
-            Next.js Developer
-          </motion.h3>
-        </div>
-      </div>
+    <section id="home" className="mt-[50px]">
+      <Content textColor="text-white" matrixRain={false} />
 
       <motion.div
         className="hidden lg:flex overflow-hidden mouse-mask"
@@ -79,36 +51,9 @@ const HeroSection = () => {
         }}
         transition={{ ease: "backOut", duration: 0, delay: 0 }}
       >
-        <div className="absolute flex flex-col justify-center items-center rounded-full">
-          <MatrixRainingCode className="z-[1]" />
-          <h4 className="scroll-m-20 text-xl font-semibold tracking-widest z-[2]">
-            Hey Folks!!, I am
-          </h4>
-          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-widest z-[2] lg:text-8xl my-8">
-            Thamizhiniyan C S
-          </h1>
-          <div className="flex items-center h-[50px] z-[2]">
-            <motion.h3
-              initial={{ x: 20, opacity: 0 }}
-              animate={{ x: [null, -10, 0], opacity: 1 }}
-              transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
-              className="scroll-m-20 text-md text-right md:text-2xl font-semibold tracking-widest"
-            >
-              Penetration Tester
-            </motion.h3>
-            <Separator className="bg-primary mx-5" orientation="vertical" />
-            <motion.h3
-              initial={{ x: -20, opacity: 0 }}
-              animate={{ x: [null, 10, 0], opacity: 1 }}
-              transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
-              className="scroll-m-20 text-md text-left md:text-2xl font-semibold tracking-widest"
-            >
-              Next.js Developer
-            </motion.h3>
-          </div>
-        </div>
+        <Content textColor="text-primary" matrixRain={true} />
       </motion.div>
-    </motion.section>
+    </section>
   );
 };
 

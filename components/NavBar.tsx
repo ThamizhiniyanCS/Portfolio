@@ -43,8 +43,8 @@ export default function NavBar({}: Props) {
   ];
 
   return (
-    <>
-      <div className="hidden xl:flex z-[45] bg-background fixed top-0 left-0 w-full h-[50px] justify-between items-center px-10">
+    <nav>
+      <div className="xl:flex z-[45] bg-background w-full h-[49px] justify-between items-center px-10">
         <Link href="/">
           <p className="">Thamizhiniyan C S</p>
         </Link>
@@ -64,6 +64,6 @@ export default function NavBar({}: Props) {
         </NavigationMenu>
       </div>
       <NavScrollProgress />
-    </>
+    </nav>
   );
 }
