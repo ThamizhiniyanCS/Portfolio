@@ -8,12 +8,14 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { IconExternalLink } from "@tabler/icons-react";
+import Image from "next/image";
 
 export type LogoComponentData = {
   logoData: SimpleIcon;
   href: string;
   ClassName?: string;
   description: string;
+  ImageSource?: any;
 };
 
 const LogoComponent = ({
@@ -21,33 +23,52 @@ const LogoComponent = ({
   href,
   ClassName,
   description,
+  ImageSource,
 }: LogoComponentData) => {
   const { hex, path, source, title } = logoData;
 
   return (
     <HoverCard>
       <HoverCardTrigger className="mx-2">
-        <svg
-          className={`${ClassName}`}
-          width="30"
-          height="30"
-          viewBox="0 0 24 24"
-          fill={`#${hex}`}
-        >
-          <path d={path} />
-        </svg>
-      </HoverCardTrigger>
-      <HoverCardContent className="min-w-40 w-auto max-w-96 min-h-16 h-auto max-h-40 p-3 grid grid-cols-5 grid-rows-1 gap-2">
-        <div className="flex justify-center items-center">
+        {ImageSource ? (
+          <Image
+            width={30}
+            src={ImageSource}
+            alt={`${logoData.title} logo`}
+            className={`flex justify-center items-center ${ClassName}`}
+          />
+        ) : (
           <svg
             className={`${ClassName}`}
-            width="50"
-            height="50"
+            width="30"
+            height="30"
             viewBox="0 0 24 24"
             fill={`#${hex}`}
           >
             <path d={path} />
           </svg>
+        )}
+      </HoverCardTrigger>
+      <HoverCardContent className="min-w-40 w-auto max-w-96 min-h-16 h-auto max-h-40 p-3 grid grid-cols-5 grid-rows-1 gap-2">
+        <div className="flex justify-center items-center">
+          {ImageSource ? (
+            <Image
+              width={50}
+              src={ImageSource}
+              alt={`${logoData.title} logo`}
+              className={`flex justify-center items-center ${ClassName}`}
+            />
+          ) : (
+            <svg
+              className={`${ClassName}`}
+              width="50"
+              height="50"
+              viewBox="0 0 24 24"
+              fill={`#${hex}`}
+            >
+              <path d={path} />
+            </svg>
+          )}
         </div>
 
         <div className="h-full flex flex-col justify-center items-start ml-2 col-span-4">
