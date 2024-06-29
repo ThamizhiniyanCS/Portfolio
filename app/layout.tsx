@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <GoogleTagManager gtmId="G-CQQ1EPLZDZ" />
+      <GoogleTagManager gtmId="GTM-P92MDG32" />
       <GoogleAnalytics gaId="G-CQQ1EPLZDZ" />
       <body className={josefin_sans.className}>
         <NavBar />
