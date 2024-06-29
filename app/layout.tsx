@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import NavBarMobile from "@/components/NavBarMobile";
 import Footer from "@/components/Footer/Footer";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const josefin_sans = Josefin_Sans({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <GoogleTagManager gtmId="G-CQQ1EPLZDZ"/>
       <body className={josefin_sans.className}>
         <NavBar />
         <NavBarMobile />
