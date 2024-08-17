@@ -14,13 +14,22 @@ const Footer = () => {
           <IconBrandGithubFilled />
         </a>
       </div>
-      <p className="text-slate-500 text-xs tracking-widest">
+      <p className="hidden md:block text-slate-500 text-xs tracking-widest">
         Designed & Developed by{" "}
         <span className="text-primary leading-[.5rem] text-base">
           Thamizhiniyan C S
         </span>{" "}
         Copyrights &#169; {date.getFullYear()}
       </p>
+      <div className="flex md:hidden flex-col w-full items-center mt-3">
+        <p className="text-slate-500 text-xs tracking-widest">
+          Designed & Developed by
+        </p>
+        <p className="text-primary leading-[.5rem]">Thamizhiniyan C S</p>
+        <p className="text-slate-500 text-xs tracking-widest">
+          Copyrights &#169; {date.getFullYear()}
+        </p>
+      </div>
     </div>
   );
 };

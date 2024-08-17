@@ -81,6 +81,7 @@
 
 *::-webkit-scrollbar {
   width: 5px;
+  height: 5px;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -105,9 +106,10 @@ section {
   justify-content: start;
   align-items: center;
   width: 100vw;
-  height: var(--section-height);
+  min-height: var(--section-height);
   scroll-margin-top: var(--navbar-height);
   scroll-behavior: smooth;
+  @apply px-4 lg:px-0
 }
 
 .mouse-mask {
@@ -117,7 +119,7 @@ section {
   mask-size: 500px;
   height: var(--section-height);
   width: 100vw;
-  display: flex;
+  display: hidden;
   align-items: center;
   justify-content: center;
   color: #3b82f6;
@@ -130,4 +132,10 @@ section {
 #tsparticles canvas {
   position: absolute !important;
   top: 100vh !important;
+}
+
+@media (min-width: 1024px) {
+  .mouse-mask {
+    display: flex;
+  }
 }

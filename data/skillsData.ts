@@ -23,7 +23,7 @@ import {
   siMetasploit,
   siZap,
 } from "simple-icons";
-import { LogoComponentData } from "./LogoComponent";
+import { LogoComponentData } from "../components/About/LogoComponent";
 import PythonLogo from "@/public/python-logo-only.svg";
 import VercelLogo from "@/public/vercel-icon-light.svg";
 import FramerLogo from "@/public/framer-color-logo.svg";

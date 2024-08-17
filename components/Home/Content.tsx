@@ -33,22 +33,23 @@ const Content = ({
     >
       {matrixRain && <MatrixRain className="z-[1]" />}
 
-      <motion.h4 variants={variants} className="">
+      <motion.h4 variants={variants} className="text-sm sm:text-xl">
         Hey Folks!!, I am
       </motion.h4>
 
       <AnimatedText
         el="h1"
         text={["Thamizhiniyan C S"]}
-        className="text-8xl my-8"
+        className="text-2xl sm:text-4xl md:text-6xl xl:text-8xl my-8"
         repeatDelay={10000}
       />
 
-      <div className="flex items-center h-[50px]">
+      <div className="flex items-center h-[30px] sm:h-[50px]">
         <motion.h3
           initial={{ x: 20, opacity: 0 }}
           animate={{ x: [null, -10, 0], opacity: 1 }}
           transition={{ ease: "easeOut", duration: 0.5, delay: 1.6 }}
+          className="text-sm sm:text-2xl"
         >
           Ethical Hacker
         </motion.h3>
@@ -56,14 +57,15 @@ const Content = ({
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: [null, -10, 0] }}
-          className="w-[1px] h-full mx-5 bg-primary"
           transition={{ ease: "easeIn", duration: 0.5, delay: 1.5 }}
+          className="w-[1px] h-full mx-5 bg-primary"
         />
 
         <motion.h3
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: [null, 10, 0], opacity: 1 }}
           transition={{ ease: "easeOut", duration: 0.5, delay: 1.6 }}
+          className="text-sm sm:text-2xl"
         >
           Next.js Developer
         </motion.h3>

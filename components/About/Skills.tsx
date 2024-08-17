@@ -7,7 +7,7 @@ import {
   TableCell,
   TableRow,
 } from "@/components/ui/table";
-import { Categories } from "./skillsData";
+import { Categories } from "@/data/skillsData";
 import { motion } from "framer-motion";
 
 const SkillsLoop = () => {
@@ -48,11 +48,13 @@ const Skills = () => {
       initial={{ x: -30, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ ease: "easeIn", duration: 0.5 }}
-      className="w-[550px] h-full flex flex-col items-start justify-start pr-1"
+      className="w-full max-w-[550px] h-full flex flex-col items-start justify-start pr-1"
     >
       <h2 className="w-full border-primary">Skills</h2>
       <Table>
-        <TableCaption>Hover over each logo to know more about it.</TableCaption>
+        <TableCaption className="hidden lg:table-caption">
+          Hover over each logo to know more about it.
+        </TableCaption>
         <SkillsLoop />
       </Table>
     </motion.div>
